@@ -1,3 +1,4 @@
+// First Solution
 export default function isValid(letter) {
  let flag = false;
   for (let index = 0; index < letter.length; index++) {
@@ -15,4 +16,11 @@ export default function isValid(letter) {
     }
   }
   return flag ? false : true;
+}
+
+// Solution with regex
+export default function isValid(letter) {
+ if (letter.includes('()')) return false;
+ const regex = /\(([^\[\]\{\}(]+)\)/;
+ return regex.test(letter);
 }
